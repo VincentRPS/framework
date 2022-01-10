@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "framework"
+version = "2022.1"
+description = "A hyper-user friendly bot framework built on hikari"
+authors = ["VincentRPS"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+aiohttp = "^3.8.1"
+hikari = "^2.0.0-alpha.105"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.931"
+isort = "^5.10.1"
+black = "^21.12b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

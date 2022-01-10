@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2022 VincentRPS
@@ -19,3 +20,22 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+# This only really matters while starting up, and only to the voice gateway.
+# although it gives enough speed to be feasable.
+
+try:
+    import orjson # type: ignore
+except (ImportError, ModuleNotFoundError):
+    import json
+
+    HAS_SPEED = False
+else:
+    HAS_SPEED = True
+
+if HAS_SPEED:
+    to_json = orjson.dumps
+    from_json = orjson.loads
+else:
+    to_json = json.dumps
+    from_json = json.loads
