@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2022 VincentRPS
@@ -19,3 +20,37 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+# The Core Client components.
+
+import abc
+
+# gonna have to stub this one day.
+from framework.ext.missing import MISSING # type: ignore
+
+
+class ClientDispatcher(abc.ABC):
+    """The second base class for Client Events.
+
+    The ClientDispatcher has been developed as a system closer to discord.py's event system.
+    While both discord.py and hikari's event system are somewhat simular, discord.py has a better system
+    user wise.
+    This should one day emulate all current hikari and framework events.
+
+    .. versionadded:: 2022.1
+
+    """
+
+    def __init__(self):
+        self.bot: Client = MISSING
+
+
+class Client:
+    """The Client core class which the user is gonna interact with,
+
+    Unless using cogs in which they will use :class:`ext.Cog`.
+
+    .. versionadded:: 2022.1
+    """
+
+    ...

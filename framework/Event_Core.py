@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2022 VincentRPS
@@ -19,3 +20,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+# The Core Event System.
+
+import abc
+
+import hikari
+
+
+class Event(hikari.Event, abc.ABC):  # weird error here?
+    """The base Class for any and every event.
+
+    This class serves as a connection class with `hikari.Event` and the :class:`ClientDispatcher`,
+    essentially emulates hikari events with that more user friendly system.
+    """
